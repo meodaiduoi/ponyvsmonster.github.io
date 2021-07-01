@@ -1,0 +1,103 @@
+// color set
+$color-initial: #fff !default;
+$color-primary: #9b4dca !default;
+$color-secondary: #606c76 !default;
+$color-tertiary: #f4f5f6 !default;
+$color-quaternary: #d1d1d1 !default;
+$color-quinary: #e1e1e1 !default;
+
+// $color-dark-initial: ;
+// $color-dark-primary: ;
+// $color-dark-secondary: ;
+// $color-dark-tertiary: ;
+// $color-dark-quaternar: ;
+// $color-dark-quinary: ;
+
+// $color-dark-background: ;
+// $color-light-background: ;
+
+// //
+// @mixin accent ($color-initial, $color-primary, $color-secondary, $color-tertiary, $color-quaternary, $color-quinary) {
+//     .button,
+//     button,
+//     input[type='button'],
+//     input[type='reset'],
+//     input[type='submit'] {
+
+//     }
+
+//     h1, h2, h3, h4, h5, h6 {
+//         color: ;
+//     }
+
+//     a {
+//         &:hover, &:focus {
+//             color: ;
+//         }
+//     }
+
+//     .nav {
+
+//     }
+
+
+// }
+
+
+// .theme {
+//     &-dark {
+//         p { color: #F7F6EE !important; }
+//         body { background-color:#100c08; }
+
+//         &-oled {
+//             @extend .theme-dark;
+//             body { background-color: #000000; }
+//         }
+//     }
+
+//     &-light {
+//         p { color: #100c08 !important; }
+//         body { background-color: #F7F6EE !important; }
+//     }
+
+//     &.accent {
+//         &-cyan {
+//             @include a
+//         }
+    
+//         &-purple {
+    
+//         }
+    
+//         &-pink {
+    
+//         }
+
+//         &-red {
+
+//         }
+
+//         &-dark {
+
+//         }
+//     }
+// }
+
+
+
+.background, .bg {
+    &-sub_dark {
+        background-color: rgba(92, 92, 92, 0.08);
+    }
+    &-dark {
+        background-color: #0a0a0a;
+    }
+
+    &-light {
+        background-color: #f4f5f6;
+    }
+
+    &-sub_light {
+        background-color: #f6f6f6;
+    }
+}

@@ -1,0 +1,229 @@
+// breakpoint map
+$breakpoint: (
+    "xs": 0px,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px
+);
+
+.blur {
+    backdrop-filter: blur(6px);
+}
+
+.sticky {
+    position: sticky;
+    z-index: 9;
+    &-top {
+        top: 0;
+    }
+    &-bot {
+        bottom: 0;
+    }
+}
+
+.center {
+    margin: auto;
+    padding: 10px;
+}
+
+.visible {
+    visibility: visible !important;
+  }
+
+.invisible {
+    visibility: hidden !important;
+}
+
+.text {
+    $align: (
+        "left": left,
+        "right": right,
+        "center": center
+    );
+
+    &_algin {
+        @each $align_name, $pos in $align {
+            &-#{$align_name} {
+                text-align: $pos;
+            }
+        }
+
+        @each $bp_name, $bp in $breakpoint {
+            @each $align_name, $pos in $align {
+                &-#{$bp_name}-#{$align_name} {
+                    @media (min-width: #{$bp}) {
+                        text-align: $pos;
+                    }
+                }
+            }
+        }
+    }
+
+    &-oblique {
+        font-style: oblique;
+    }
+    &-italic {
+        font-style: italic;
+    }
+
+    &_color {
+        &-white {
+            color: whitesmoke;
+        }
+        &-black {
+        }
+
+    }
+}
+
+.overflow {
+    &-auto {
+        overflow: auto;
+    }
+    &-hidden {
+        overflow: hidden;
+    }
+    &-visible {
+        overflow: visible;
+    }
+    &-scroll {
+        overflow: scroll;
+    }
+
+    &-x {
+        &-auto {
+            overflow-x: auto;
+        }
+        &-hidden {
+            overflow-x: hidden;
+        }
+        &-visible {
+            overflow-x: visible;
+        }
+        &-scroll {
+            overflow-x: scroll;
+        }
+    }
+
+    &-y {
+        &-auto {
+            overflow-y: auto;
+        }
+        &-hidden {
+            overflow-y: hidden;
+        }
+        &-visible {
+            overflow-y: visible;
+        }
+        &-scroll {
+            overflow-y: scroll;
+        }
+    }
+}
+
+
+
+
+// Float either direction
+.float {
+    &-left { float: left; }
+    &-right { float: right; }
+}
+
+.item_align {
+
+    $item-align: (
+        "stretch": stretch,
+        "center": center,
+        "baseline": baseline,
+        "initial": initial,
+        "inherit": inherit,
+    );
+
+    @each $align_name, $align in $item-align {
+        &-#{$align_name} {
+            align-items: $align;
+        }
+    }
+
+    @each $bp_name, $bp in $breakpoint {
+        @each $align_name, $align in $item-align {
+            &-#{$bp_name}-#{$align_name} {
+                @media (min-width: #{$bp}) {
+                    align-items: $align;
+                }
+            }
+        }
+    }
+}
+
+.flexbox {
+
+    display: flex;
+
+    $justify: (
+        "left": left,
+        "right": right,
+        "center": center,
+        "baseline": baseline,
+        "space-around": space-around,
+        "space-evenly": space-evenly,
+        "space-between": space-between,
+        "flex-start": flex-start,
+        "flex-end": flex-end
+    );
+
+    @each $justify_name, $justitfy in $justify {
+        &-#{$justify_name} {
+            justify-content: $justitfy;
+        }
+    }
+
+    @each $bp_name, $bp in $breakpoint {
+        @each $justify_name, $justitfy in $justify {
+            &-#{$bp_name}-#{$justify_name} {
+                @media (min-width: #{$bp}) {
+                    justify-content: $justitfy;
+                }
+            }
+        }
+    }
+}
+
+.clearfix {
+    &:after {
+        clear: both;
+        content: ' '; // The space content is one way to avoid an Opera bug.
+        display: table;
+    }
+}
+
+.display {
+    $display: (
+        "none": none,
+        "inline": inline,
+        "inline-block": inline-block,
+        "block": block,
+        "flex": flex
+    );
+
+    @each $display_name, $display_value in $display {
+        &-#{$display_name} {
+            display: $display_value;
+        }
+    }
+
+    @each $bp_name, $bp in $breakpoint {
+        @each $display_name, $display_value in $display {
+            &-#{$bp_name} {
+                &-#{$display_name} {
+                    @media (min-width: #{$bp}) {
+                        display: $display_value;
+                    }
+                }
+            }
+        }
+    }
+}

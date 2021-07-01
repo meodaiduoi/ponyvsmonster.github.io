@@ -1,0 +1,71 @@
+// $breakpoint: (
+//     "xs": 0px,
+//     "sm": 576px,
+//     "md": 768px,
+//     "lg": 992px,
+//     "xl": 1200px,
+//     "xxl": 1400px
+// );
+
+// $width: 90%, 540px, 720px, 960px, 1140px, 1320px;
+
+// .container {
+//     @each $bp_name, $bp in $breakpoint {
+//         @for $i from 6 through 1 {
+//             $n: 0;
+//             @each $size in $width {
+//                 @if $n < 
+//                     &-#{$size} {
+//                         @media (min-width: #{$bp}) {
+//                             max-width: $size;
+//                         }
+//                     }
+//             }
+//         }
+//     }
+// }
+
+
+// //Landon Schropp breakpoint method
+// //https://davidwalsh.name/write-media-queries-sass
+// @mixin bp_phone-sm {
+//     @media (min-width: #{$xs}) {
+//         @content;
+//     }
+// }
+// @mixin bp_phone {
+//     @media (min-width: #{$sm}) {
+//         @content;
+//     }
+// }
+// @mixin bp_tablet {
+//     @media (min-width: #{$md}) {
+//         @content;
+//     }
+// }
+// @mixin bp_tablet-lg {
+//     @media (min-width: #{$lg}) {
+//         @content;
+//     }
+// }
+// @mixin bp_destop {
+//     @media (min-width: #{$xl}) {
+//         @content;
+//     }
+// }
+
+// @mixin bp_destop-lg {
+//     @media (min-width: #{$xxl}) {
+//         @content;
+//     }
+// }
+
+// @mixin bp_custom ($breakpoint) {
+//     @media (min-width: #{$breakpoint}) {
+//         @content;
+//     }
+// }
+
+// .a {
+//     background-image: url("https://derpicdn.net/img/2016/7/7/1195735/large.png");
+// }

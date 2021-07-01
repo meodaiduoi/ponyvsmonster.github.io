@@ -1,0 +1,281 @@
+@import "_misc_mixin.scss";
+@import "_variables.scss";
+
+// screen size breakpoint
+$xs: 0px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+//Landon Schropp breakpoint method
+//https://davidwalsh.name/write-media-queries-sass
+@mixin bp_phone-sm {
+    @media (min-width: #{$xs}) {
+        @content;
+    }
+}
+@mixin bp_phone {
+    @media (min-width: #{$sm}) {
+        @content;
+    }
+}
+@mixin bp_tablet {
+    @media (min-width: #{$md}) {
+        @content;
+    }
+}
+@mixin bp_tablet-lg {
+    @media (min-width: #{$lg}) {
+        @content;
+    }
+}
+@mixin bp_destop {
+    @media (min-width: #{$xl}) {
+        @content;
+    }
+}
+
+@mixin bp_destop-lg {
+    @media (min-width: #{$xxl}) {
+        @content;
+    }
+}
+
+@mixin bp_custom ($breakpoint) {
+    @media (min-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+// section layout system
+.hero {
+    width: 100%;
+    position: relative;
+    background-color: red;
+    padding: 20vh 0 20vh 0;
+    top: -3px;
+    h1, h2, h3, h4, h5, h6 {
+        padding: 0 0 3rem 0;
+    }
+
+    &-background, &-bg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        h1, h2, h3, h4, h5, h6 { margin-bottom: 0; }
+        &.fixed {
+            background-attachment: fixed;
+        }
+        &.scroll {
+            background-attachment: scroll;
+        }
+    }
+
+    &-content {
+        text-decoration: none;
+        color:white;
+    }
+
+    &-btn_box {
+        width: 20px;
+    }
+
+}
+
+
+.content {
+    padding: 4rem 0 4rem 0;
+    margin: 0 auto;
+    &-title {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        h1, h2, h3, h4, h5, h6 { margin-bottom: 0; }
+        &.fixed {
+            background-attachment: fixed;
+        }
+        &.scroll {
+            background-attachment: scroll;
+        }
+    }
+}
+
+
+
+.footer {
+    padding: 2rem 0 2rem 0;
+    & .top {
+        padding-bottom: 1.5rem;
+        h1, h2, h3, h4, h5 {
+            @include bp_phone-sm { text-align: center; }
+            @include bp_tablet-lg { text-align: left; }
+        }
+    }
+    & .mid {
+        padding-bottom: 1.5rem;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 0 0 1rem 0;
+            }
+        }
+    }
+    & .bot {
+        .icon {
+            padding: 0 2rem 0 2rem;
+        }
+    }
+
+}
+
+// grid system
+.container {
+    margin: 0 auto;
+    position: relative;
+
+    @include bp_phone-sm {
+        max-width: 90%;
+    }
+    @include bp_phone {
+        max-width: 540px;
+    }
+    @include bp_tablet {
+        max-width: 720px;
+    }
+    @include bp_tablet-lg() {
+        max-width: 960px;
+    }
+    @include bp_destop {
+        max-width: 1140px;
+    }
+    @include bp_destop-lg {
+        max-width: 1320px;
+    }
+
+    &-fluid { max-width: 100%; }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    word-wrap: break-word;
+
+    &.row-no-padding {
+      padding: 0;
+
+      & > .column {
+        padding: 0;
+      }
+    }
+
+    &.row-wrap { flex-wrap: wrap; }
+    // Vertically Align Columns
+    // .row-* vertically aligns every .col in the .row
+    &.row-top { align-items: flex-start; }
+    &.row-bottom { align-items: flex-end; }
+    &.row-center { align-items: center; }
+    &.row-stretch { align-items: stretch; }
+    &.row-baseline { align-items: baseline; }
+
+    .column {
+        display: block;
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+
+        // Column Offsets
+        &.column-offset-10 {
+          margin-left: 10%;
+        }
+        &.column-offset-20 {
+          margin-left: 20%;
+        }
+        &.column-offset-25 {
+          margin-left: 25%;
+        }
+        &.column-offset-33,
+        &.column-offset-34 {
+          margin-left: 33.3333%;
+        }
+        &.column-offset-40 {
+          margin-left: 40%;
+        }
+        &.column-offset-50 {
+          margin-left: 50%;
+        }
+        &.column-offset-60 {
+          margin-left: 60%;
+        }
+        &.column-offset-66,
+        &.column-offset-67 {
+          margin-left: 66.6666%;
+        }
+        &.column-offset-75 {
+          margin-left: 75%;
+        }
+        &.column-offset-80 {
+          margin-left: 80%;
+        }
+        &.column-offset-90 {
+          margin-left: 90%;
+        }
+        &.column-10 {
+            max-width: 10%;
+        }
+        &.column-20 {
+            max-width: 20%;
+        }
+        &.column-25 {
+            max-width: 25%;
+        }
+        &.column-33,
+        &.column-34 {
+            max-width: 33.3333%;
+        }
+        &.column-40 {
+            max-width: 40%;
+        }
+        &.column-50 {
+            max-width: 50%;
+        }
+        &.column-60 {
+            max-width: 60%;
+        }
+        &.column-66,
+        &.column-67 {
+            max-width: 66.6666%;
+        }
+        &.column-75 {
+            max-width: 75%;
+        }
+        &.column-80 {
+            max-width: 80%;
+        }
+        &.column-90 {
+            max-width: 90%;
+        }
+        // .column-* vertically aligns an individual .column
+        .column-top { align-self: flex-start; }
+        .column-bottom { align-self: flex-end; }
+        .column-center { align-self: center; }
+        // Larger than mobile screen
+    }
+}
+@include bp_tablet {
+    .row {
+        flex-direction: row;
+        margin-left: -1.0rem;
+        width: 100%;
+
+        .column {
+            margin-bottom: inherit;
+            padding: 0 1.0rem;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+// websafe - fallback
+body {
+    font-family: 'Times New Roman', serif;
+}
+
+// font face
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&display=swap');
+
+    font-family: 'Work Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,500;1,300;1,500&display=swap');
+}
+
+
+
+// reponsive font size
+// link and paragraph setting
+p, a {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+
+    margin-top: 0;
+    font-size: clamp(0.6rem, 4vw, 1.25rem);
+}
+
+a {
+    color: $color-primary;
+    font-weight: 500
+    ;
+    text-decoration: none;
+    &:focus, &:hover { color: $color-secondary; }
+}
+
+b, strong .text-strong {
+    font-weight: bold;
+}
+
+// header
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+
+    letter-spacing: -0.02rem;
+    margin-bottom: 2.0rem;
+    margin-top: 0;
+}
+
+h1, h2, h3 { font-weight: 900; }
+h4, h5, h6 { font-weight: 800; }
+
+h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+
+    font-size: clamp(2rem, 9.5vw, 3.2rem);
+}
+
+h2 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+
+    font-size: clamp(1.7rem, 9vw, 2.9rem);
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 1.3;
+
+    font-size: clamp(1.4rem, 8.5vw, 2.6rem);
+}
+
+h4 {
+    font-size: 1.8rem;
+    letter-spacing: -.06rem;
+    line-height: 1.35;
+
+    font-size: clamp(1.2rem, 8vw, 2.4rem);
+}
+
+h5 {
+    font-size: 1.6rem;
+    letter-spacing: -.05rem;
+    line-height: 1.5;
+
+    font-size: clamp(1.0rem, 7.5vw, 2.2rem);
+}
+
+h6 {
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-size: 1.5rem;
+
+    font-size: clamp(0.6rem, 7vw, 1.8rem);
+
+}
+
+// icon
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.icon {
+    &-big {
+        padding: 0rem 0 3rem 0;
+        font-size: 6rem;
+    }
+    &-medium {
+        font-size: 2rem;
+    }
+}
